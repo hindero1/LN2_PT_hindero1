@@ -1,0 +1,47 @@
+body {
+    background-color: black !important;
+    color: white !important;
+}
+
+.navbar {
+    background-color: #5f9bf4 !important;
+}
+.hero {
+    text-align: left;
+    padding: 4rem 0;
+    margin-bottom: 2rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url("/images/hintergrund.png") center/cover;
+    background-color: #333;
+}
+
+.hero h1 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.hero .subtitle {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin: 0;
+}
+.back-button {
+    color: white; /* Weiße Schrift */
+    text-decoration: none; /* Keine Unterstreichung */
+    padding: 0.5rem 1rem; /* Innenabstand */
+    border-radius: 4px; /* Abgerundete Ecken */
+    transition: all 0.2s; /* Sanfte Animation */
+    margin-bottom: 1rem; /* Abstand nach unten */
+    display: inline-block; /* Verhält sich wie Inline-Element */
+  }
+
+  /* Hover-Effekt für den Zurück-Button */
+  .back-button:hover {
+    background: rgba(
+      255,
+      255,
+      255,
+      0.1
+    ); /* Leicht weißer Hintergrund beim Hover */
+    }
