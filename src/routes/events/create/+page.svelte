@@ -4,7 +4,8 @@
 </script>
 <!-- Erklärung!!!!!!!! -->
 
-<a href="/events">Zurück</a>
+<a href="/events" class="back-button">Zurück zu Events</a>
+
 <h1>Event hinzufügen</h1>
 <form method="POST" action="?/create">
   <div class="mb-3">

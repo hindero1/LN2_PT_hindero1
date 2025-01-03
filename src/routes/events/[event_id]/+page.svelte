@@ -5,7 +5,7 @@
   let kategorie = data.kategorie;
 </script>
 
-<a href="/events">Zurück zu Events</a>
+<a href="/events" class="back-button">Zurück zu Events</a>
 
 <h1>{event.name}</h1>
 <div class="row mt-3">
