@@ -1,30 +1,53 @@
 <h1>Willkommen bei MyEvents</h1>
 <p>Deine Plattform für die besten Events!</p>
 
-
-<div id="multiImageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
-    <div class="carousel-inner">
-      <!-- Erste Folie mit 4 Bildern -->
-      <div class="carousel-item active">
-        <div class="row">
-          <div class="col">
-            <img src="images/Single.png" class="d-block w-100" alt="1">
-          </div>
-          <div class="col">
-            <img src="images/Double.png" class="d-block w-100" alt="2">
-          </div>
-          <div class="col">
-            <img src="images/Triple.png" class="d-block w-100" alt="3">
-          </div>
-          <div class="col">
-            <img src="images/Doubleplay.png" class="d-block w-100" alt="4">
-          </div>
-          <div class="col">
-            <img src="images/Hit.png" class="d-block w-100" alt="4">
-          </div>
+<!-- carousel funktion von SW8 -->
+<div id="multiImageCarousel" class="carousel slide">
+  <div class="carousel-inner">
+    <!-- Erste Folie mit 4 Bildern -->
+    <div class="carousel-item active">
+      <div class="row">
+        <div class="col">
+          <img src="images/Single.png" class="d-block w-100" alt="1">
+        </div>
+        <div class="col">
+          <img src="images/Double.png" class="d-block w-100" alt="2">
+        </div>
+        <div class="col">
+          <img src="images/Triple.png" class="d-block w-100" alt="3">
+        </div>
+        <div class="col">
+          <img src="images/Doubleplay.png" class="d-block w-100" alt="4">
         </div>
       </div>
     </div>
+    <!-- Zweite Folie mit 4 Bildern -->
+    <div class="carousel-item">
+      <div class="row">
+        <div class="col">
+          <img src="images/Hit.png" class="d-block w-100" alt="5">
+        </div>
+        <div class="col">
+          <img src="images/Error.png" class="d-block w-100" alt="6">
+        </div>
+        <div class="col">
+          <img src="images/Home.png" class="d-block w-100" alt="7">
+        </div>
+        <div class="col">
+          <img src="images/Music.png" class="d-block w-100" alt="8">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Navigation -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#multiImageCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#multiImageCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
 <style> 
