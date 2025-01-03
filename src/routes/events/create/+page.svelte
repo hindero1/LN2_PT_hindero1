@@ -37,9 +37,9 @@
       {/each}
     </select>
   </div>
-  <button type="submit" class="btn btn-primary">Add Event</button>
+  <button type="submit" class="btn btn-primary">Event hinzufügen</button>
 </form>
 
 {#if form?.success}
-  <p>Event created</p>
+  <p>Event hinzugefügt</p>
 {/if}
