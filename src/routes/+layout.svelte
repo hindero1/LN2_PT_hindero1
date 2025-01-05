@@ -17,7 +17,7 @@
       aria-controls="navbarNav"
       aria-expanded="false"
       aria-label="Toggle navigation"
-    ><!-- Events und Eventlist -->
+    ><!-- Dropdown Events und Eventlist -->
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">

@@ -64,7 +64,6 @@ async function createEvent(event) {
     const result = await collection.insertOne(event);
     return result.insertedId.toString(); // convert ObjectId to String
   } catch (error) {
-    // TODO: errorhandling
     console.log(error.message);
   }
   return null;
@@ -81,13 +80,11 @@ async function updateEvent(event) {
 
     if (result.matchedCount === 0) {
       console.log("No event with id " + id);
-      // TODO: errorhandling
     } else {
       console.log("event with id " + id + " has been updated.");
       return id;
     }
   } catch (error) {
-    // TODO: errorhandling
     console.log(error.message);
   }
   return null;
@@ -108,19 +105,18 @@ async function deleteEvent(id) {
       return id;
     }
   } catch (error) {
-    // TODO: errorhandling
     console.log(error.message);
   }
   return null;
 }
 /////////////////////////////////////////
-// EventsWithOrganisator
+// EventsWithOrganisator, holt die Informationen eines Organisators basierend auf der organisator_id, die in einem gegebenen Event gespeichert ist.
 //////////////////////////////////////////
 async function getEventsWithOrganisator(event) {
   let organisator = null;
   try {
     const collection = db.collection("organisatoren");
-    const query = { id: event.organisator_id }; // Hier nutzen wir die numerische ID aus dem Spiel
+    const query = { id: event.organisator_id }; // Hier nutzen wir die numerische ID aus dem Event
     organisator = await collection.findOne(query);
 
     if (!organisator) {
@@ -134,13 +130,13 @@ async function getEventsWithOrganisator(event) {
   return organisator;
 }
 /////////////////////////////////////////
-// EventsWithKategorie
+// EventsWithKategorie, holt die Informationen einer Kategorie basierend auf der kategorie_id, die in einem gegebenen Event gespeichert ist.
 //////////////////////////////////////////
 async function getEventsWithKategorie(event) {
   let kategorie = null;
   try {
     const collection = db.collection("kategorien");
-    const query = { id: event.kategorie_id }; // Hier nutzen wir die numerische ID aus dem Spiel
+    const query = { id: event.kategorie_id }; // Hier nutzen wir die numerische ID aus dem Event
     kategorie = await collection.findOne(query);
 
     if (!kategorie) {
@@ -174,7 +170,6 @@ async function getOrganisatoren() {
     });
   } catch (error) {
     console.log(error);
-    // TODO: errorhandling
   }
   return organisatoren;
 }
@@ -189,32 +184,30 @@ async function getOrganisator(id) {
 
     if (!organisator) {
       console.log("No event with id " + id);
-      // TODO: errorhandling
     } else {
       organisator._id = organisator._id.toString(); // convert ObjectId to String
     }
   } catch (error) {
-    // TODO: errorhandling
     console.log(error.message);
   }
   return organisator;
 }
 /////////////////////////////////////////
-// OrganisatorWithEvents
+// OrganisatorWithEvents, holt alle Events eines Organisators.
 //////////////////////////////////////////
 async function getOrganisatorWithEvents(organisator_id) {
   let events = [];
   try {
-    // Erst den Publisher holen um seine numerische ID zu bekommen
+    // Erst den Organisator holen um seine numerische ID zu bekommen
     const organisator = await db.collection("organisatoren").findOne({ 
       _id: new ObjectId(organisator_id) 
     });
     
     if (organisator) {
-      // Mit der numerischen ID nach Games suchen
+      // Mit der numerischen ID nach Events suchen
       const collection = db.collection("events");
-      const query = { organisator_id: organisator.id }; // Hier nutzen wir publisher.id
-      console.log("Suche nach Games mit query:", query);
+      const query = { organisator_id: organisator.id }; // Hier nutzen wir organisator.id
+      console.log("Suche nach Events mit query:", query);
       
       events = await collection.find(query).toArray();
       events.forEach((event) => {
@@ -247,7 +240,6 @@ async function getKategorien() {
     });
   } catch (error) {
     console.log(error);
-    // TODO: errorhandling
   }
   return kategorien;
 }
@@ -262,18 +254,16 @@ async function getKategorie(id) {
 
     if (!kategorie) {
       console.log("No kategorie with id " + id);
-      // TODO: errorhandling
     } else {
       kategorie._id = kategorie._id.toString(); // convert ObjectId to String
     }
   } catch (error) {
-    // TODO: errorhandling
     console.log(error.message);
   }
   return kategorie;
 }
 /////////////////////////////////////////
-// KategorieWithEvents
+// KategorieWithEvents, holt alle Events einer Kategorie.
 //////////////////////////////////////////
 
 async function getKategorieWithEvents(kategorie_id) {
@@ -285,10 +275,10 @@ async function getKategorieWithEvents(kategorie_id) {
     });
     
     if (kategorie) {
-      // Mit der numerischen ID nach Games suchen
+      // Mit der numerischen ID nach Events suchen
       const collection = db.collection("events");
       const query = { kategorie_id: kategorie.id }; // Hier nutzen wir kategorie.id
-      console.log("Suche nach Games mit query:", query);
+      console.log("Suche nach Events mit query:", query);
       
       events = await collection.find(query).toArray();
       events.forEach((event) => {

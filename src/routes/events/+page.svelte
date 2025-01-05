@@ -23,7 +23,7 @@
 <!-- See https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
 <div class="row mt-3">
   {#each events as event}
-    <div class="col-12 col-md-4 mb-3">
+    <div class="col-12 col-sm-6 col-md-4  mb-3">
       <EventCard {event}></EventCard>
     </div>
   {/each}

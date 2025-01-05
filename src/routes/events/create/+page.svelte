@@ -1,5 +1,4 @@
 <script>
-  /** @type {import('./$types').PageData} */
   let { data, form } = $props();
 </script>
 <!-- Erklärung!!!!!!!! -->
@@ -7,6 +6,7 @@
 <a href="/events" class="back-button">Zurück zu Events</a>
 
 <h1>Event hinzufügen</h1>
+<!-- Name, Datum, Adresse -->
 <form method="POST" action="?/create">
   <div class="mb-3">
     <label for="" class="form-label">Name</label>
@@ -40,7 +40,7 @@
   </div>
   <button type="submit" class="btn btn-primary">Event hinzufügen</button>
 </form>
-
+<!-- Bestätigungsnachricht -->
 {#if form?.success}
   <p>Event hinzugefügt</p>
 {/if}
