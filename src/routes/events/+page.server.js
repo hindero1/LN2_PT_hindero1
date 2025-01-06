@@ -7,22 +7,22 @@ export async function load() {
 }
 
 export const actions = {
-  addToEventlist: async ({request}) => {
+  addToEventlist: async ({ request }) => {
     let data = await request.formData();
     let id = data.get("id");
-    let event = { 
+    let event = {
       _id: id,
       eventlist: true
-    } 
+    }
     await db.updateEvent(event);
   },
-  removeFromEventlist: async ({request}) => {
+  removeFromEventlist: async ({ request }) => {
     let data = await request.formData();
     let id = data.get("id");
-    let event = { 
+    let event = {
       _id: id,
       eventlist: false
-    } 
+    }
     await db.updateEvent(event);
   }
 }

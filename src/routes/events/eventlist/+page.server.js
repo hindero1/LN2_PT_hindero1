@@ -8,13 +8,13 @@ export async function load() {
 }
 
 export const actions = {
-  removeFromEventlist: async ({request}) => {
+  removeFromEventlist: async ({ request }) => {
     let data = await request.formData();
     let id = data.get("id");
-    let event = { 
+    let event = {
       _id: id,
       eventlist: false
-    } 
+    }
     await db.updateEvent(event);
   }
 };
