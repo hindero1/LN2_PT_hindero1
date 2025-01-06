@@ -1,7 +1,7 @@
 <script>
   let { data, form } = $props();
+
 </script>
-<!-- Erklärung!!!!!!!! -->
 
 <a href="/events" class="back-button">Zurück zu Events</a>
 
@@ -42,5 +42,5 @@
 </form>
 <!-- Bestätigungsnachricht -->
 {#if form?.success}
-  <p>Event hinzugefügt</p>
+  <p>Event wurde erfolgreich hinzugefügt</p>
 {/if}

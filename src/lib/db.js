@@ -159,8 +159,6 @@ async function getOrganisatoren() {
   try {
     const collection = db.collection("organisatoren");
 
-    // You can specify a query/filter here
-    // See https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/query-document/
     const query = {};
 
     // Get all objects that match the query
@@ -229,8 +227,6 @@ async function getKategorien() {
   try {
     const collection = db.collection("kategorien");
 
-    // You can specify a query/filter here
-    // See https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/query-document/
     const query = {};
 
     // Get all objects that match the query
