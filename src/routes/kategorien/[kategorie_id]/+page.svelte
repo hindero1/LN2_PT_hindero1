@@ -5,12 +5,12 @@
     let events = data.events;
     $: events = data.events;
   </script>
-  
+<!-- Hero -->  
 <div class="hero">
   <a href="/kategorien" class="back-button">Zurück zu Kategorien</a>
   <h1>{kategorie.name}</h1>
 </div>
-
+<!-- Auflistung aller Events einer Kategorie -->
 <h2>Alle Events dieser Kategorie</h2>
 <div class="row">
   {#if events.length > 0}

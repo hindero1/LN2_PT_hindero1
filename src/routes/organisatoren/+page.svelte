@@ -6,10 +6,11 @@
   let organisatoren = data.organisatoren;
 </script>
 
+<!-- Hero -->
 <div class="hero">
   <h1>Organisatoren</h1>
 </div>
-
+<!-- Auflistung aller Organisatoren -->
 <div class="row mt-3">
   {#each organisatoren as organisator}
     <div class="col-12 col-md-4 mb-3">
