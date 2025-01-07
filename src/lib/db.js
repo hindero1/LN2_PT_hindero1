@@ -1,11 +1,11 @@
 import { MongoClient, ObjectId } from "mongodb"; // See https://www.mongodb.com/docs/drivers/node/current/quick-start/
-import { DB_URI } from "$env/static/private";
+import { DB_URI } from "$env/static/private"; // import the DB_URI from the environment variables
 
 import { get } from "svelte/store";
 
-const client = new MongoClient(DB_URI);
+const client = new MongoClient(DB_URI); // create a new client
 
-await client.connect();
+await client.connect(); // connect to the database
 const db = client.db("PTLN2"); // select database
 
 //////////////////////////////////////////
@@ -130,7 +130,8 @@ async function getEventsWithOrganisator(event) {
   return organisator;
 }
 /////////////////////////////////////////
-// EventsWithKategorie, holt die Informationen einer Kategorie basierend auf der kategorie_id, die in einem gegebenen Event gespeichert ist.
+// EventsWithKategorie, wenn ein Event angezeigt wird und man die zugehörigen Informationen der Kategorie benötigt.
+// holt Infos einer Kategorie basierend auf der kategorie_id, die in einem gegebenen Event gespeichert ist.
 //////////////////////////////////////////
 async function getEventsWithKategorie(event) {
   let kategorie = null;

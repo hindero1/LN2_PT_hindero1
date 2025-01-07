@@ -1,6 +1,5 @@
 <script>
   let { data, form } = $props();
-
 </script>
 
 <a href="/events" class="back-button">Zurück zu Events</a>
