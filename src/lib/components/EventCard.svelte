@@ -1,8 +1,6 @@
 <script>
   import { enhance } from "$app/forms";
-
   let { event } = $props();
-  console.log("Event in EventCard:", event); // Debugging
 </script>
 
 <div class="event-card">

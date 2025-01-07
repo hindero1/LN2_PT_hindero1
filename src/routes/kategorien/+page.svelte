@@ -13,7 +13,7 @@
 <!-- Auflistung aller Kategorien -->
 <div class="row mt-3">
   {#each kategorien as kategorie}
-    <div class="col-12 col-md-4 mb-4">
+    <div class="col-12 col-md-4 col-sm-6 mb-4">
       <KategorieCard {kategorie}></KategorieCard>
     </div>
   {/each}

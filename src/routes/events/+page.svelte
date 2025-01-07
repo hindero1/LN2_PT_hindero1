@@ -1,7 +1,7 @@
 <script>
   import EventCard from "$lib/components/EventCard.svelte";
-  let { data } = $props();
-  let events = $derived(data.events);
+  let { data } = $props(); // $props() gibt die Daten zurück, die von page.server übergeben werden
+  let events = $derived(data.events); // $derived ändert die Ansicht auf der Page, beispielsweise bei Eventlist hinzufügen
 </script>
 
 <!-- Hero -->

@@ -2,7 +2,6 @@ import db from "$lib/db.js";
 import { error } from "@sveltejs/kit";
 
 export async function load({ params }) {
-  console.log("Übergebene ID aus params:", params.kategorie_id); // Debugging
 
   const  kategorie = await db.getKategorie(params.kategorie_id);
   const events = await db.getKategorieWithEvents(params.kategorie_id);
@@ -11,8 +10,6 @@ export async function load({ params }) {
   if (!kategorie) {
     throw error(404, `Kategorie mit der ID ${params.kategorie_id} nicht gefunden`);
   }
-
-  console.log("Kategorie-Daten mit Events:", kategorie); // Debugging
 
   return {
     kategorie,

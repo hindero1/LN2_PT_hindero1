@@ -2,17 +2,13 @@ import db from "$lib/db.js";
 import { error } from "@sveltejs/kit";
 
 export async function load({ params }) {
-  console.log("Übergebene ID aus params:", params.organisator_id); // Debugging
 
   const  organisator = await db.getOrganisator(params.organisator_id);
   const events = await db.getOrganisatorWithEvents(params.organisator_id);
 
-
   if (!organisator) {
     throw error(404, `Organisator mit der ID ${params.organisator_id} nicht gefunden`);
   }
-
-  console.log("Organisator-Daten mit Events:", organisator); // Debugging
 
   return {
     organisator,

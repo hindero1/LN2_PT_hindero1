@@ -1,13 +1,12 @@
 import db from "$lib/db.js";
 import { redirect } from "@sveltejs/kit";
-
+//params ist Objekt, das die Platzhalterwerte aus der URL enthält.
 export async function load({ params }) {
 
   const event = await db.getEvent(params.event_id);
   const organisator = await db.getEventsWithOrganisator(event);
   const kategorie = await db.getEventsWithKategorie(event);
   return {
- //   event: await db.getEvent(params.event_id),
     event,
     organisator,
     kategorie
