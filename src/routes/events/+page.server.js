@@ -8,8 +8,8 @@ export async function load() {
 
 export const actions = {
   addToEventlist: async ({ request }) => {
-    let data = await request.formData();
-    let id = data.get("id");
+    let data = await request.formData();// Formulardaten lesen
+    let id = data.get("id");// ID aus dem Formular extrahieren
     let event = {
       _id: id,
       eventlist: true
